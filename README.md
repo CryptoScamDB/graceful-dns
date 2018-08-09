@@ -27,7 +27,7 @@ This project wraps a part of Node.js's [dns module](https://nodejs.org/api/dns.h
 const dns = require('graceful-dns');
 
 (async () => {
-    const ip = dns.getIP('example.com');
+    const ip = await dns.getIP('example.com');
 	if(ip) {
 	    console.log("Found IP: " + ip);
 	} else {
