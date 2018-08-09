@@ -1,6 +1,6 @@
 {
   "name": "graceful-dns",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An NPM package to provide non-rejecting promises for Node's DNS module",
   "main": "index.js",
   "repository": {

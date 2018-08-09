@@ -6,7 +6,7 @@ Are you writing code in dev environments? Check out [the experimental DNS Promis
 
 Do you want promises to reject instead of returning `undefined`? Check out [dns-then](https://github.com/node-then/dns-then)
 
-This project wraps a part of Node.js's [dns module](https://nodejs.org/api/dns.html#dns_dns) in non-rejecting promises. **It's not a 1:1 port**.
+This project wraps a part of Node.js's [dns module](https://nodejs.org/api/dns.html#dns_dns) in non-rejecting promises (instead of rejecting, it returns `undefined`. It also parses URLs to hostnames automatically. **It's not a 1:1 port**.
 
 ## Usage
 
