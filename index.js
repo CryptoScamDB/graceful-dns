@@ -25,7 +25,7 @@ module.exports.getDNS = (hostname) => {
 
 module.exports.getNS = (hostname) => {
 	return new Promise(resolve => {
-		dns.resolveAny(url.parse(hostname).hostname || hostname, (err,addresses) => {
+		dns.resolveNs(url.parse(hostname).hostname || hostname, (err,addresses) => {
 			if(err) resolve(undefined);
 			else resolve(addresses);
 		});
@@ -34,7 +34,7 @@ module.exports.getNS = (hostname) => {
 
 module.exports.reverseDNS = (ip) => {
 	return new Promise(resolve => {
-		dns.resolveAny(ip, (err,hostnames) => {
+		dns.reverse(ip, (err,hostnames) => {
 			if(err) resolve(undefined);
 			else resolve(hostnames);
 		});
