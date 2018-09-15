@@ -1,11 +1,11 @@
 {
-  "name": "graceful-dns",
-  "version": "1.2.0",
+  "name": "@cryptoscamdb/graceful-dns",
+  "version": "1.0.0",
   "description": "An NPM package to provide non-rejecting promises for Node's DNS module",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrLuit/graceful-dns.git"
+    "url": "git+https://github.com/CryptoScamDB/graceful-dns.git"
   },
   "keywords": [
     "graceful",
@@ -16,7 +16,7 @@
   "author": "Luit",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MrLuit/graceful-dns/issues"
+    "url": "https://github.com/CryptoScamDB/graceful-dns/issues"
   },
-  "homepage": "https://github.com/MrLuit/graceful-dns#readme"
+  "homepage": "https://github.com/CryptoScamDB/graceful-dns#readme"
 }
