@@ -10,7 +10,7 @@ This project wraps a part of Node.js's [dns module](https://nodejs.org/api/dns.h
 
 ## Usage
 
-> npm install graceful-dns
+> npm i @cryptoscamdb/graceful-dns
 
 ## API
 
@@ -24,7 +24,7 @@ This project wraps a part of Node.js's [dns module](https://nodejs.org/api/dns.h
 ## Examples
 
 ```
-const dns = require('graceful-dns');
+const dns = require('@cryptoscamdb/graceful-dns');
 
 (async () => {
     const ip = await dns.getIP('example.com');
