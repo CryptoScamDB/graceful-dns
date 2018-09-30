@@ -2,7 +2,8 @@
   "name": "@cryptoscamdb/graceful-dns",
   "version": "1.0.1",
   "description": "An NPM package to provide non-rejecting promises for Node's DNS module",
-  "main": "src/index.ts",
+  "main": "lib/graceful-dns.js",
+  "typings": "typings/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CryptoScamDB/graceful-dns.git"
@@ -45,7 +46,7 @@
     "prepublishOnly": "npm run build",
     "clean": "rimraf ./lib",
     "build": "webpack",
-    "prettier:diff": "prettier --write --config ./.prettierrc --list-different 'src/**/*.ts' 'src/**/*.tsx' '*.js' 'gatsby/**/*.js'"
+    "prettier:diff": "prettier --write --config ./.prettierrc --list-different 'src/**/*.ts'"
   },
   "lint-staged": {
     "*.ts": [
