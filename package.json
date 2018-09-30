@@ -43,7 +43,7 @@
   "scripts": {
     "tscheck": "tsc --noEmit --project tsconfig.json",
     "tslint": "tslint --project .",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run clean && npm run build",
     "clean": "rimraf ./lib",
     "build": "webpack",
     "prettier:diff": "prettier --write --config ./.prettierrc --list-different 'src/**/*.ts'"
