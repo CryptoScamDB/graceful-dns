@@ -10,7 +10,7 @@ This project wraps a part of Node.js's [dns module](https://nodejs.org/api/dns.h
 
 ## Usage
 
-> npm i @cryptoscamdb/graceful-dns
+> npm i -P @cryptoscamdb/graceful-dns
 
 ## API
 
@@ -23,15 +23,18 @@ This project wraps a part of Node.js's [dns module](https://nodejs.org/api/dns.h
 
 ## Examples
 
-```
-const dns = require('@cryptoscamdb/graceful-dns');
+```typescript
+import { getIP } from '@cryptoscamdb/graceful-dns';
 
-(async () => {
-    const ip = await dns.getIP('example.com');
-	if(ip) {
-	    console.log("Found IP: " + ip);
-	} else {
-	    console.log("Could not find IP address");
-	}
-})();
+getIP('example.com')
+    .then((ip: string) => {
+        if (ip) {
+            console.log("Found IP:", ip);
+        } else {
+            console.log("Could not find IP address");
+        }
+    })
+    .catch(() => {
+        // This should never be called
+    });
 ```

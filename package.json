@@ -1,8 +1,9 @@
 {
   "name": "@cryptoscamdb/graceful-dns",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An NPM package to provide non-rejecting promises for Node's DNS module",
-  "main": "index.js",
+  "main": "lib/graceful-dns.js",
+  "typings": "typings/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CryptoScamDB/graceful-dns.git"
@@ -18,5 +19,47 @@
   "bugs": {
     "url": "https://github.com/CryptoScamDB/graceful-dns/issues"
   },
-  "homepage": "https://github.com/CryptoScamDB/graceful-dns#readme"
+  "homepage": "https://github.com/CryptoScamDB/graceful-dns#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@types/node": "^10.11.3",
+    "@types/webpack": "^4.4.13",
+    "@types/webpack-node-externals": "^1.6.3",
+    "awesome-typescript-loader": "^5.2.1",
+    "husky": "^1.0.1",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-microsoft-contrib": "^5.2.1",
+    "typescript": "^3.1.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "scripts": {
+    "tscheck": "tsc --noEmit --project tsconfig.json",
+    "tslint": "tslint --project .",
+    "prepublishOnly": "npm run clean && npm run build",
+    "clean": "rimraf ./lib",
+    "build": "webpack",
+    "prettier:diff": "prettier --write --config ./.prettierrc --list-different 'src/**/*.ts'"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write --config ./.prettierrc --config-precedence file-override",
+      "tslint --project .",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index --again",
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run tslint && npm run tscheck"
+    }
+  }
 }
