@@ -6,15 +6,15 @@ import * as url from 'url';
  * @param hostname
  */
 export const getIP = (hostname: string): Promise<string | undefined> => {
-  return new Promise(resolve => {
-    dns.lookup(url.parse(hostname).hostname || hostname, (error, address) => {
-      if (error) {
-        return resolve(undefined);
-      }
+    return new Promise(resolve => {
+        dns.lookup(url.parse(hostname).hostname || hostname, (error, address) => {
+            if (error) {
+                return resolve(undefined);
+            }
 
-      resolve(address);
+            resolve(address);
+        });
     });
-  });
 };
 
 /**
@@ -22,15 +22,15 @@ export const getIP = (hostname: string): Promise<string | undefined> => {
  * @param hostname
  */
 export const getDNS = (hostname: string): Promise<dns.AnyRecord[] | undefined> => {
-  return new Promise(resolve => {
-    dns.resolveAny(url.parse(hostname).hostname || hostname, (error, records) => {
-      if (error) {
-        return resolve(undefined);
-      }
+    return new Promise(resolve => {
+        dns.resolveAny(url.parse(hostname).hostname || hostname, (error, records) => {
+            if (error) {
+                return resolve(undefined);
+            }
 
-      resolve(records);
+            resolve(records);
+        });
     });
-  });
 };
 
 /**
@@ -38,15 +38,15 @@ export const getDNS = (hostname: string): Promise<dns.AnyRecord[] | undefined> =
  * @param hostname
  */
 export const getNS = (hostname: string): Promise<string[] | undefined> => {
-  return new Promise(resolve => {
-    dns.resolveNs(url.parse(hostname).hostname || hostname, (error, addresses) => {
-      if (error) {
-        return resolve(undefined);
-      }
+    return new Promise(resolve => {
+        dns.resolveNs(url.parse(hostname).hostname || hostname, (error, addresses) => {
+            if (error) {
+                return resolve(undefined);
+            }
 
-      resolve(addresses);
+            resolve(addresses);
+        });
     });
-  });
 };
 
 /**
@@ -54,15 +54,15 @@ export const getNS = (hostname: string): Promise<string[] | undefined> => {
  * @param ip
  */
 export const reverseDNS = (ip: string): Promise<string[] | undefined> => {
-  return new Promise(resolve => {
-    dns.reverse(ip, (error, hostnames) => {
-      if (error) {
-        return resolve(undefined);
-      }
+    return new Promise(resolve => {
+        dns.reverse(ip, (error, hostnames) => {
+            if (error) {
+                return resolve(undefined);
+            }
 
-      resolve(hostnames);
+            resolve(hostnames);
+        });
     });
-  });
 };
 
 export const getServers = dns.getServers;
