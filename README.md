@@ -17,7 +17,6 @@ This project wraps a part of Node.js's [dns module](https://nodejs.org/api/dns.h
 - [**getServers()**](https://nodejs.org/api/dns.html#dns_dns_getservers) - *returns an array of IP addresses which are configured for DNS lookups*
 - [**setServers(servers)**](https://nodejs.org/api/dns.html#dns_dns_setservers_servers) - *configures an array of IP addresses which are configured for DNS lookups*
 - [**getIP(hostname)**](https://nodejs.org/api/dns.html#dns_dns_lookup_hostname_options_callback) - *returns a promise which will resolve to either `undefined` or the IP address*
-- [**getDNS(hostname)**](https://nodejs.org/api/dns.html#dns_dns_resolveany_hostname_callback) - *returns a promise which will resolve to either `undefined` or an array of DNS records*
 - [**getNS(hostname)**](https://nodejs.org/api/dns.html#dns_dns_resolvens_hostname_callback) - *returns a promise which will resolve to either `undefined` or an array of nameservers*
 - [**reverseDNS(ip)**](https://nodejs.org/api/dns.html#dns_dns_reverse_ip_callback) - *returns a promise which will resolve to either `undefined` or an array of hostnames*
 
