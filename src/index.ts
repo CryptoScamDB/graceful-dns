@@ -18,22 +18,6 @@ export const getIP = (hostname: string): Promise<string | undefined> => {
 };
 
 /**
- * Get all DNS records associated with a hostname.
- * @param hostname
- */
-export const getDNS = (hostname: string): Promise<dns.AnyRecord[] | undefined> => {
-    return new Promise(resolve => {
-        dns.resolveAny(url.parse(hostname).hostname || hostname, (error, records) => {
-            if (error) {
-                return resolve(undefined);
-            }
-
-            resolve(records);
-        });
-    });
-};
-
-/**
  * Get the name servers associated with a hostname.
  * @param hostname
  */
